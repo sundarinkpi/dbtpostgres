@@ -1,15 +1,15 @@
 config:
   send_anonymous_usage_stats: False
 
-sde_dbt_tutorial:
+dbtproject:
   target: dev
   outputs:
     dev:
       type: postgres
-      threads: 1
+      threads: 5
       host: localhost
       port: 5432
-      user: dbt
-      pass: password1234
-      dbname: dbt
+      user: postgres
+      pass: admin@123
+      dbname: postgres
       schema: warehouse

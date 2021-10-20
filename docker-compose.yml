@@ -1,16 +1,16 @@
 services:
     postgres:
-      image: postgres:13
+      image: postgres
       environment:
-        POSTGRES_USER: dbt
-        POSTGRES_PASSWORD: password1234
-        POSTGRES_DB: dbt
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: admin@123
+        POSTGRES_DB: postgres
       volumes:
         - ./raw_data:/input_data
         - ./temp:/temp
         - ./warehouse_setup:/docker-entrypoint-initdb.d
       healthcheck:
-        test: ["CMD", "pg_isready", "-U", "airflow"]
+        test: ["CMD", "pg_isready", "-U"]
         interval: 5s
         retries: 5
       restart: always
