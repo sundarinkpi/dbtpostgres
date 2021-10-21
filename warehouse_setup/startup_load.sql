@@ -3,7 +3,7 @@ CREATE SCHEMA IF NOT EXISTS snapshots;
 DROP TABLE IF EXISTS warehouse.customers;
 CREATE TABLE warehouse.customers (
     customer_id INT,
-    zipcode VARCHAR(5),
+    zipcode VARCHAR(10),
     city VARCHAR(100),
     state_code VARCHAR(2),
     datetime_created VARCHAR(100),
