@@ -22,13 +22,13 @@ CREATE TABLE warehouse.orders (
 );
 DROP TABLE IF EXISTS warehouse.state;
 CREATE TABLE warehouse.state (
-    state_identifier VARCHAR(10),
+    state_id VARCHAR(10),
     state_code VARCHAR(5000),
-    st_name VARCHAR(5000)
+    state_name VARCHAR(5000)
 );
 COPY warehouse.customers(customer_id, zipcode, city, state_code, datetime_created, datetime_updated)
 FROM '/input_data/customer.csv' DELIMITER ',' CSV HEADER;
-COPY warehouse.state(state_identifier, state_code, st_name)
+COPY warehouse.state(state_id, state_code, state_name)
 FROM '/input_data/state.csv' DELIMITER ',' CSV HEADER;
 COPY warehouse.orders(
     order_id,
